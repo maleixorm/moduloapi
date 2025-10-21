@@ -20,14 +20,12 @@ namespace moduloapi.Controllers
             _context = context;
         }
 
+        [HttpPost]
         public IActionResult Create(Contato contato)
         {
-            
-        }
-
-        public IActionResult Error()
-        {
-            
+            _context.Add(contato);
+            _context.SaveChanges();
+            return Ok(contato);
         }
     }
 }
